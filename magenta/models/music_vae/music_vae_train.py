@@ -89,6 +89,10 @@ flags.DEFINE_string(
     'log', 'INFO',
     'The threshold for what messages will be logged: '
     'DEBUG, INFO, WARN, ERROR, or FATAL.')
+flags.DEFINE_bool(
+    'cpu_only', False,
+    'CPU_only: '
+    'True or False')
 
 
 # Should not be called from within the graph to avoid redundant summaries.
@@ -160,8 +164,9 @@ def train(train_dir,
         config.hparams, config.train_examples_path or config.tfds_name,
         train_dir)
   with tf.Graph().as_default():
-    with tf.device(tf.train.replica_device_setter(
-        num_ps_tasks, merge_devices=True)):
+    device = '/device:cpu:0' if FLAGS.cpu_only else tf.train.replica_device_setter(num_ps_tasks, merge_devices=True)
+    print(device)
+    with tf.device(device):
 
       model = config.model
       model.build(config.hparams,
@@ -346,4 +351,5 @@ def console_entry_point():
 
 
 if __name__ == '__main__':
+  tf.set_random_seed(42)
   console_entry_point()

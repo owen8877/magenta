@@ -9,3 +9,11 @@ build/
 *.DS_Store
 .vscode/*
 .idea/
+*.npz
+*.npy
+*.h5
+checkpoint/
+*.log
+*.aux
+*.out
+*~

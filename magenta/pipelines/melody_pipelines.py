@@ -69,6 +69,7 @@ def extract_melodies(quantized_sequence,
                      gap_bars=1.0,
                      min_unique_pitches=5,
                      ignore_polyphonic_notes=True,
+                     highest_note=True,
                      pad_end=False,
                      filter_drums=True):
   """Extracts a list of melodies from the given quantized NoteSequence.
@@ -159,6 +160,7 @@ def extract_melodies(quantized_sequence,
             search_start_step=instrument_search_start_step,
             gap_bars=gap_bars,
             ignore_polyphonic_notes=ignore_polyphonic_notes,
+            highest_note=highest_note,
             pad_end=pad_end,
             filter_drums=filter_drums)
       except PolyphonicMelodyError:

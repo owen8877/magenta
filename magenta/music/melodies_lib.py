@@ -234,6 +234,7 @@ class Melody(events_lib.SimpleEventSequence):
                               instrument=0,
                               gap_bars=1,
                               ignore_polyphonic_notes=False,
+                              highest_note=True,
                               pad_end=False,
                               filter_drums=True):
     """Populate self with a melody from the given quantized NoteSequence.
@@ -292,10 +293,11 @@ class Melody(events_lib.SimpleEventSequence):
         quantized_sequence.quantization_info.steps_per_quarter)
 
     # Sort track by note start times, and secondarily by pitch descending.
+    correction = -1 if highest_note else 1
     notes = sorted([n for n in quantized_sequence.notes
                     if n.instrument == instrument and
                     n.quantized_start_step >= search_start_step],
-                   key=lambda note: (note.quantized_start_step, -note.pitch))
+                   key=lambda note: (note.quantized_start_step, correction*note.pitch))
 
     if not notes:
       return

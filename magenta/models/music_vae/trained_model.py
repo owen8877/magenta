@@ -138,7 +138,7 @@ class TrainedModel(object):
         saver.restore(self._sess, checkpoint_path)
 
   def sample(self, n=None, length=None, temperature=1.0, same_z=False,
-             c_input=None):
+             c_input=None, force_z=None):
     """Generates random samples from the model.
 
     Args:
@@ -171,9 +171,13 @@ class TrainedModel(object):
         self._max_length: length
     }
 
-    if self._z_input is not None and same_z:
-      z = np.random.randn(z_size).astype(np.float32)
-      z = np.tile(z, (batch_size, 1))
+    if force_z is not None:
+      z = np.reshape(force_z, (1, 512))
+      feed_dict[self._z_input] = z
+
+    if self._z_input is not None and same_z and not force_z is not None:
+      z = np.random.randn(z_size).astype(np.float32) # z.shape == (512, )
+      z = np.tile(z, (batch_size, 1)) # z.shape == (1, 512)
       feed_dict[self._z_input] = z
 
     if self._c_input is not None:
@@ -181,7 +185,7 @@ class TrainedModel(object):
 
     outputs = []
     for _ in range(int(np.ceil(n / batch_size))):
-      if self._z_input is not None and not same_z:
+      if self._z_input is not None and not same_z and not force_z is not None:
         feed_dict[self._z_input] = (
             np.random.randn(batch_size, z_size).astype(np.float32))
       outputs.append(self._sess.run(self._outputs, feed_dict))
@@ -219,10 +223,10 @@ class TrainedModel(object):
       if not extracted_tensors.inputs:
         raise NoExtractedExamplesError(
             'No examples extracted from NoteSequence: %s' % note_sequence)
-      if len(extracted_tensors.inputs) > 1:
-        raise MultipleExtractedExamplesError(
-            'Multiple (%d) examples extracted from NoteSequence: %s' %
-            (len(extracted_tensors.inputs), note_sequence))
+      # if len(extracted_tensors.inputs) > 1:
+      #   raise MultipleExtractedExamplesError(
+      #       'Multiple (%d) examples extracted from NoteSequence: %s' %
+      #       (len(extracted_tensors.inputs), note_sequence))
       inputs.append(extracted_tensors.inputs[0])
       controls.append(extracted_tensors.controls[0])
       lengths.append(extracted_tensors.lengths[0])

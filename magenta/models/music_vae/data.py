@@ -570,7 +570,7 @@ class OneHotMelodyConverter(LegacyEventListOneHotConverter):
                gap_bars=1.0, steps_per_quarter=4, quarters_per_bar=4,
                add_end_token=False, pad_to_total_time=False,
                max_tensors_per_notesequence=5, presplit_on_time_changes=True,
-               chord_encoding=None):
+               chord_encoding=None, highest_note=True):
     self._min_pitch = min_pitch
     self._max_pitch = max_pitch
     self._valid_programs = valid_programs
@@ -587,6 +587,7 @@ class OneHotMelodyConverter(LegacyEventListOneHotConverter):
         max_steps_truncate=max_steps_truncate,
         min_unique_pitches=1,
         ignore_polyphonic_notes=not skip_polyphony,
+        highest_note=highest_note,
         pad_end=True)
     super(OneHotMelodyConverter, self).__init__(
         melody_fn,
@@ -610,13 +611,15 @@ class OneHotMelodyConverter(LegacyEventListOneHotConverter):
     notes = list(note_sequence.notes)
     del note_sequence.notes[:]
     note_sequence.notes.extend([n for n in notes if is_valid(n)])
-    return super(OneHotMelodyConverter, self).to_tensors(note_sequence)
+    aaa = super(OneHotMelodyConverter, self).to_tensors(note_sequence)
+    return aaa
 
   def to_tensors(self, note_sequence):
-    return split_process_and_combine(note_sequence,
+    aaa = split_process_and_combine(note_sequence,
                                      self._presplit_on_time_changes,
                                      self.max_tensors_per_notesequence,
                                      self.is_training, self._to_tensors_fn)
+    return aaa
 
 
 class DrumsConverter(BaseNoteSequenceConverter):
@@ -1574,7 +1577,8 @@ def split_process_and_combine(note_sequence, split, sample_size, randomize,
       results.append(ConverterTensors(*zip(*sampled_results)))
     else:
       results.append(ConverterTensors())
-  return combine_converter_tensors(results, sample_size, randomize)
+  aaa = combine_converter_tensors(results, sample_size, randomize)
+  return aaa
 
 
 def convert_to_tensors_op(item_scalar, converter):

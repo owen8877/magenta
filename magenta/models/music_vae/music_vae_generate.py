@@ -24,11 +24,13 @@ import os
 import sys
 import time
 
-from magenta import music as mm
-from magenta.models.music_vae import configs
-from magenta.models.music_vae import TrainedModel
 import numpy as np
 import tensorflow.compat.v1 as tf
+import tensorflow as tf2
+
+from magenta import music as mm
+from magenta.models.music_vae import TrainedModel
+from magenta.models.music_vae import configs
 
 flags = tf.app.flags
 logging = tf.logging
@@ -166,20 +168,53 @@ def run(config_map):
         temperature=FLAGS.temperature)
   elif FLAGS.mode == 'sample':
     logging.info('Sampling...')
-    results = model.sample(
-        n=FLAGS.num_outputs,
-        length=config.hparams.max_seq_len,
-        temperature=FLAGS.temperature)
+    mean_mu = np.load('two_med/data/mean_mu.npy')
+    mean_sigma = np.load('two_med/data/mean_sigma.npy')
+    session = tf2.keras.backend.get_session()
+    init = tf2.global_variables_initializer()
+    session.run(init)
 
-  basename = os.path.join(
-      FLAGS.output_dir,
-      '%s_%s_%s-*-of-%03d.mid' %
-      (FLAGS.config, FLAGS.mode, date_and_time, FLAGS.num_outputs))
-  logging.info('Outputting %d files as `%s`...', FLAGS.num_outputs, basename)
-  for i, ns in enumerate(results):
-    mm.sequence_proto_to_midi_file(ns, basename.replace('*', '%03d' % i))
+    forwards = (True, False)
+    ks = (16, 32, 64, 128)
+    hidden_layer_ns = (1, 2)
 
-  logging.info('Done.')
+    for forward in forwards:
+      for k in ks:
+        for hidden_layer_n in hidden_layer_ns:
+          model_path = 'two_med/data/model_k_{:d}_hln_{:d}_dir_{:s}.h5'.format(k, hidden_layer_n,
+                                                                      'forward' if forward else 'backward')
+          z1, z2 = melody_helper(model_path, mean_mu, mean_sigma, session)
+
+          results1 = model.sample(
+            n=1,
+            length=config.hparams.max_seq_len,
+            temperature=FLAGS.temperature,
+            force_z=z1)
+          results2 = model.sample(
+            n=1,
+            length=config.hparams.max_seq_len,
+            temperature=FLAGS.temperature,
+            force_z=z2)
+
+          basename = os.path.join(
+              FLAGS.output_dir,
+              'k_{:d}_hln_{:d}_dir_{:s}_*.mid'.format
+              (k, hidden_layer_n, 'forward' if forward else 'backward'))
+          logging.info('Outputting %d files as `%s`...', FLAGS.num_outputs, basename)
+          for i, ns in enumerate([results1[0], results2[0]]):
+            mm.sequence_proto_to_midi_file(ns, basename.replace('*', '%03d' % i))
+
+    logging.info('Done.')
+
+
+def melody_helper(model_path, mean_mu, mean_sigma, session):
+  model2 = tf2.keras.models.load_model(model_path)
+  model2.compile(loss=tf.keras.losses.MeanSquaredError(), optimizer=tf.keras.optimizers.Adam())
+  zmid = np.zeros((1, 3, 512))
+  zmid[0, :1, :] = mean_mu
+  zmid[0, 2, :] = mean_sigma
+  z2 = model2(zmid).eval(session=session)[0, 1, :]
+  return mean_mu, z2
 
 
 def main(unused_argv):
@@ -188,7 +223,8 @@ def main(unused_argv):
 
 
 def console_entry_point():
-  tf.app.run(main)
+  with tf.device('/device:cpu:0'):
+    tf.app.run(main)
 
 
 if __name__ == '__main__':
