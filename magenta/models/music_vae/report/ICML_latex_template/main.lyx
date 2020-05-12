@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -11,7 +11,6 @@
 
 
 % Recommended, but optional, packages for figures and better typesetting:
-\usepackage{microtype}
 \usepackage{subfigure}
 % for professional tables
 
@@ -50,11 +49,14 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype true
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement !h
 \paperfontsize default
 \spacing single
 \use_hyperref true
@@ -88,6 +90,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -96,7 +99,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -110,6 +116,414 @@
 \begin_body
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bC}{\mathbb{C}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bE}{\mathbb{E}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bF}{\mathbb{F}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bN}{\mathbb{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bP}{\mathbb{P}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bQ}{\mathbb{Q}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bR}{\mathbb{R}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bT}{\mathbb{T}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bZ}{\mathbb{Z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cA}{\mathcal{A}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cB}{\mathcal{B}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cC}{\mathcal{C}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cD}{\mathcal{D}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cE}{\mathcal{E}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cF}{\mathcal{F}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cG}{\mathcal{G}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cH}{\mathcal{H}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cK}{\mathcal{K}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cL}{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cLp}[1]{\mathcal{L}^{#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cLpp}[1]{\mathcal{L}_{+}^{#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cLsimp}{\mathcal{L}_{simp}^{0}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cM}{\mathcal{M}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cN}{\mathcal{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cO}{\mathcal{O}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cP}{\mathcal{P}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cR}{\mathcal{R}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cS}{\mathcal{S}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cT}{\mathcal{T}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cZ}{\mathcal{Z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\fq}{\mathscr{\mathfrak{q}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\sF}{\mathscr{F}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\norm}[1]{\left|\left|#1\right|\right|}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\np}[2]{\left|\left|#1\right|\right|_{#2}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\nlp}[2]{\left|\left|#1\right|\right|_{L^{#2}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\abs}[1]{\left|#1\right|}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\inv}[1]{#1^{-1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\adjoint}[1]{#1^{*}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\annihilator}[1]{#1^{\circ}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\annihilatee}[1]{#1^{\perp}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\unaryop}[1]{#1\left(\cdot\right)}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\binaryop}[1]{#1\left(\cdot,\cdot\right)}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\comp}[2]{#1\circ#2}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\converge}[1]{\overset{#1}{\joinrel\longrightarrow}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\define}{\triangleq}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\enum}[2]{\left\{  #1_{1},\dots,#1_{#2}\right\}  }
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\enumvec}[2]{\left(#1_{1},\dots,#1_{#2}\right)}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\enuminf}[1]{\left\{  #1_{1},#1_{2}\dots\right\}  }
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\equivalent}{\Longleftrightarrow}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\substitute}[1]{\overset{#1}{\joinrel===}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\tensor}{\otimes}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -117,7 +531,7 @@ status open
 
 
 \backslash
-icmltitlerunning{Adaptation of musicVAE to melody-counterpart generation}
+icmltitlerunning{Simultaneous Melody-Accompaniment Generation with musicVAE}
 \end_layout
 
 \begin_layout Plain Layout
@@ -131,7 +545,7 @@ twocolumn[
 
 
 \backslash
-icmltitle{Adaptation of musicVAE to melody-counterpart generation}
+icmltitle{Simultaneous Melody-Accompaniment Generation with musicVAE}
 \end_layout
 
 \begin_layout Plain Layout
@@ -210,150 +624,955 @@ vskip 0.3in
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-% this must go after the closing bracket ] following 
-\backslash
-twocolumn[ ...
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-% This command actually creates the footnote in the first column
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-% listing the affiliations and the copyright notice.
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-% The command takes one argument, which is text to display at the start
- of the footnote.
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-% The 
-\backslash
-icmlEqualContribution command is standard text for equal contribution.
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-% Remove it (just {}) if you do not need this facility.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-% 
-\backslash
-printAffiliationsAndNotice{}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Abstract
-This document provides a basic paper template and submission guidelines.
- Abstracts must be a single paragraph, ideally between 4–6 sentences long.
- Gross violations will trigger corrections at the camera-ready phase.
+In this article we propose a method to generate a combination of melody
+ and accompaniment at the same time.
+ The relation between the melody part and the accompaniment part is inferred
+ from the encoded embedding of realistic dataset via a transform network
+ on the latent space.
+ We also discuss several different aspects involved in this procedure.
+\end_layout
+
+\begin_layout Section
+Introduction and Review on Music Generation Techniques
+\end_layout
+
+\begin_layout Standard
+Music generation has been a popular topic and much attention has been drawn
+ to this field [Deep Learning Techniques for Music Generation– A Survey][usic
+ Generation by Deep Learning– Challenges and Directions∗].
+\end_layout
+
+\begin_layout Standard
+interest in this wide topic: in [he challenge of realistic music generation:mode
+lling raw audio at scale], the authors try to model musical signals at an
+ audio level rather than in a symbolic representation.
+ By building an autoregressive model and the argmax encoder, the convergence
+ can be reliably ensured.
+\end_layout
+
+\begin_layout Standard
+In [CONVOLUTIONAL GENERATIVE ADVERSARIAL NETWORKS WITHBINARY NEURONS FOR
+ POLYPHONIC MUSIC GENERATION], the authors design a GAN to generate realistic
+ music piece in the multi-track piano-roll representation.
+ The discriminator consists of three parts: a main stream which compress
+ the single-line sequence, an onset/offset stream and a chroma stream in
+ the end.
  
 \end_layout
 
-\begin_layout Section
-Introduction
+\begin_layout Standard
+in [Understanding and Improving Interpolation inAutoencoders via an Adversarial
+ Regularizer], the authors try to improve current autoencoder design by
+ introducing an adversal critic network which distinguish if the synthesized
+ data is an interpolation or not.
+ 
 \end_layout
 
 \begin_layout Standard
+in [Interactive Music Generation with Positional Constraints usingAnticipation-R
+NNs], enforcing positional constraints becomes feasible in the newly proposed
+ Anticipation-RNN, which makes possible a realistic replication of the style
+ of the soprano parts of the `Bach chorale harmonization'.
+ The model consists a forward-propagating token chain and a back-propagating
+ constraint chain.
+\end_layout
+
+\begin_layout Standard
+The work [LEARNING A LATENT SPACE OF MULTITRACK MEASURES] also uses variational
+ autoencoder to represent melodies in the latent space with the feature
+ of conditioning.
+ extended from 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "anonymous"
+key "Roberts2018"
+literal "false"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Section
-A Review on Music Generation Techniques
+\begin_layout Standard
+in [JamBot: Music Theory Aware Chord Based Generation of PolyphonicMusic
+ with LSTMs], a hierarchical design is proposed in which the base chord
+ LSTM produces a chord line first and the second LSTM generates the polyphonic
+ music upin that, making the model music theory aware.
+\end_layout
+
+\begin_layout Standard
+in [DeepJ: Style-Specific Music Generation], the work is based on the Biaxial
+ LSTM Architecture, which is essentially a sequential probability model.
+ DeepJ extends Biaxial LSTM by adding dynamics to the represetation which
+ is controlled by a mean squared loss.
+\end_layout
+
+\begin_layout Standard
+in [Sampling Variations of Lead Sheets] works on preserving certain musical
+ structure and melody similarity while at the same time producing realistic
+ samples.
+ The underlying model is still in a melody-chord two-stage separation fashion.
+\end_layout
+
+\begin_layout Standard
+The work [SONGFROMPI: A MUSICALLYPLAUSIBLENETWORKFORPOPMUSICGENERATION]
+ focuses on ...
+ which uses ser-composed pop songs and videogame music as the training set.
+ This work also compares different patterns in Major/Minor, Harmonic Minor,
+ Melodic Minor, and Blues chords.
+\end_layout
+
+\begin_layout Standard
+In [MIDINET: A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN
+ MUSIC GENERATION], the authors explore the combination of conditioner and
+ generator CNN with GAN, which leads to music generation without prior informati
+on of the melody.
+\end_layout
+
+\begin_layout Standard
+[WAVENET: A GENERATIVEMODEL FORRAWAUDIO]
+\end_layout
+
+\begin_layout Standard
+[Imposing higher-level Structure in Polyphonic Music Generationusing Convolution
+al Restricted Boltzmann Machines and Constraints]
+\end_layout
+
+\begin_layout Standard
+[Sequence Tutor: Conservative Fine-Tuning of Sequence Generation Modelswith
+ KL-control] RL approach
+\end_layout
+
+\begin_layout Standard
+[PerformanceNet: Score-to-Audio Music Generation with Multi-Band Convolutional
+ Residual Network ]
+\end_layout
+
+\begin_layout Standard
+[MidiMe: Personalizing a MusicVAEmodel with user data]
+\end_layout
+
+\begin_layout Standard
+[Generating Music from Text:Mapping Embeddings to a VAE’s Latent Space]
+\end_layout
+
+\begin_layout Standard
+[Pop Music Transformer: Generating Music with Rhythm and Harmony]
 \end_layout
 
 \begin_layout Section
 Proposed Network Structure
 \end_layout
 
+\begin_layout Subsection
+MusicVAE
+\end_layout
+
+\begin_layout Standard
+As described in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Roberts2018"
+literal "false"
+
+\end_inset
+
+, we can utilize the hierarchical RNN structure to extract the encoded latent
+ information in a note sequence.
+ To be more specific, given the input 
+\begin_inset Formula $x$
+\end_inset
+
+, we characterize the encoded latent vector 
+\begin_inset Formula $z$
+\end_inset
+
+ by a Guassian distribution 
+\begin_inset Formula $q_{\lambda}\left(z|x\right)$
+\end_inset
+
+ which has mean 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and covariance 
+\begin_inset Formula $\text{diag}\left(\sigma\right)$
+\end_inset
+
+.
+ The two important statistical quantities, 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma$
+\end_inset
+
+, are computed through the following network structure:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../plots/network1.png
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schematic of the hierarchical recurrent Variational Autoencoder model (MusicVAE,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Roberts2018"
+literal "false"
+
+\end_inset
+
+).
+ The red blocks are bi-directional LSTM nodes, which encode the input into
+ two parameters 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma$
+\end_inset
+
+.
+ Then with the help of a non-updating noise term 
+\begin_inset Formula $\xi$
+\end_inset
+
+, the latent vector 
+\begin_inset Formula $z$
+\end_inset
+
+ is sampled and passed to the hierarchical decoder (blue and purple) in
+ the bottom.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The posterior distribution 
+\begin_inset Formula $p\left(x\right)=\int_{Z}p\left(z\right)p\left(x|z\right)$
+\end_inset
+
+ reflects how likely the input can be replicated under current setting of
+ network parameters, which we wish to be as high as possible to complete
+ the encode-decode precedure.
+ Since the 
+\begin_inset Formula $p\left(x\right)$
+\end_inset
+
+ is intractable, we can instead maximize the evidence lower bound (ELBO)
+\begin_inset Formula 
+\[
+\boldsymbol{E}\left[\log p_{\theta}\left(x|z\right)\right]-KL\left(q_{\lambda}\left(z|x\right)||p\left(z\right)\right)\le\log p\left(x\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Melody and Accompaniment Generation
+\end_layout
+
+\begin_layout Standard
+Based on the forementioned discussion, we model the problem as follows:
+ given a set of data 
+\begin_inset Formula $\left\{ \left(x^{1},x^{2}\right)_{\lambda}\right\} _{\lambda}$
+\end_inset
+
+ and a pre-trained network 
+\begin_inset Formula $\boldsymbol{N}$
+\end_inset
+
+ producing 
+\begin_inset Formula $q_{\lambda}^{1,2}\left(z|x\right)$
+\end_inset
+
+ which maximizes the posterior distribution 
+\begin_inset Formula $p\left(x\right)$
+\end_inset
+
+, find another network 
+\begin_inset Formula $\widetilde{\boldsymbol{N}}$
+\end_inset
+
+ such that we can only use 
+\begin_inset Formula $\left\{ x_{\lambda}^{1}\right\} _{\lambda}$
+\end_inset
+
+ or 
+\begin_inset Formula $\left\{ x_{\lambda}^{2}\right\} _{\lambda}$
+\end_inset
+
+ (not both!) to produce 
+\begin_inset Formula $\widetilde{q_{\lambda}^{1,2}}\left(z|x\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Since we only allow one component of the input, it is natural to map the
+ latent distribution (for example 
+\begin_inset Formula $q_{\lambda}^{1}\left(z|x\right)$
+\end_inset
+
+) into another (correspondingly 
+\begin_inset Formula $q_{\lambda}^{2}\left(z|x\right)$
+\end_inset
+
+).
+ It is especially straightforward for gaussian distributions since we can
+ just map the mean and covariance on one part to another.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../plots/network2.png
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Network structure for simultaneous melody-accompaniment generation.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-network"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../plots/network3.png
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Latent parameter transformer in detail.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:my-network-detail"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As shown in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:my-network"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:my-network-detail"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the transform is a hour-glass shape network with hidden layers.
+ The network configuration depends on how many hidden layers we have, how
+ wide is the hidden layer and which component we are using (
+\begin_inset Formula $\left\{ x_{\lambda}^{1}\right\} _{\lambda}$
+\end_inset
+
+ or 
+\begin_inset Formula $\left\{ x_{\lambda}^{2}\right\} _{\lambda}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Since the training dataset is small, we can use relatively small hidden
+ layer size.
+ The loss function is the typical mean squared loss of the mean value and
+ covariance.
+\end_layout
+
+\begin_layout Standard
+To prevent the network from overfitting the training data, we have dropout
+ in between two consecutive layers.
+\end_layout
+
 \begin_layout Section
 Numerical Experiment
+\end_layout
+
+\begin_layout Subsection
+Source of Training Data 
+\end_layout
+
+\begin_layout Standard
+The training dataset used is from Bach's compositions
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+downloaded from 
+\begin_inset CommandInset href
+LatexCommand href
+name "Dave's J.S. Bach Page - MIDI Files - Bach MIDI Sequences by John Sankey"
+target "http://www.jsbach.net/midi/midi_johnsankey.html"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ We download 467 midi files and 248 of them are valid input since the pre-traine
+d musicVAE model can only handle quadruplemeter midi files.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../plots/data_fig.png
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Extract 
+\begin_inset Formula $\left\{ x_{\lambda}^{1}\right\} _{\lambda}$
+\end_inset
+
+ and 
+\begin_inset Formula $\left\{ x_{\lambda}^{2}\right\} _{\lambda}$
+\end_inset
+
+ from a multi-note sequence.
+ The red sequence consists the upper-most notes at each timestamp while
+ the blue one consists the bottom-most notes.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The first component 
+\begin_inset Formula $\left\{ x_{\lambda}^{1}\right\} _{\lambda}$
+\end_inset
+
+(correponding to the 
+\begin_inset Quotes eld
+\end_inset
+
+melody
+\begin_inset Quotes erd
+\end_inset
+
+ part) is extracted as the highest note at each timestamp and the second
+ component 
+\begin_inset Formula $\left\{ x_{\lambda}^{2}\right\} _{\lambda}$
+\end_inset
+
+ (correponding to the 
+\begin_inset Quotes eld
+\end_inset
+
+accompaniment
+\begin_inset Quotes erd
+\end_inset
+
+ part) is extracted as the lowest note.
+ We will also denote the two components as upper-bottom in the figure labels.
+\end_layout
+
+\begin_layout Subsection
+Conditions and Hyper-Parameters
+\end_layout
+
+\begin_layout Standard
+We have three independent hyper-parameters to adjust:
+\end_layout
+
+\begin_layout Itemize
+The number of hidden layers: 
+\begin_inset Formula $N_{h}$
+\end_inset
+
+ can be either 1 or 2;
+\end_layout
+
+\begin_layout Itemize
+The width of each hidden layer: we set them to be the same in each trial
+ as 
+\begin_inset Formula $k=16,32,64,128$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+The component we are using as the independent variable: 
+\begin_inset Formula $i=1,2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In total we will have 
+\begin_inset Formula $2\times4\times2=16$
+\end_inset
+
+ different conditions and we will compare them in the following section.
+\end_layout
+
+\begin_layout Subsection
+Results
+\end_layout
+
+\begin_layout Standard
+We train each network 
+\begin_inset Formula $\widetilde{\boldsymbol{N}}$
+\end_inset
+
+ for 500 epochs with dropout rate 10%.
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:loss-forward"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:loss-backward"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows the loss decaying throughout the training procedure.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../../two_med/plot/forward.eps
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Training (in solid line) and testing (in dashed line) loss under the 
+\begin_inset Formula $\left\{ x_{\lambda}^{1}\right\} _{\lambda}\Rightarrow\left\{ x_{\lambda}^{2}\right\} _{\lambda}$
+\end_inset
+
+ setting.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:loss-forward"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../../two_med/plot/backward.eps
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Training (in solid line) and testing (in dashed line) loss under the 
+\begin_inset Formula $\left\{ x_{\lambda}^{2}\right\} _{\lambda}\Rightarrow\left\{ x_{\lambda}^{1}\right\} _{\lambda}$
+\end_inset
+
+ setting.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:loss-backward"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By comparing the loss curves, we can see that larger hidden layer width
+ can lead to better performance, but only in the 1 hidden layer setting;
+ increasing the width doesn't have such a significant effect when there
+ are two hidden layers.
+\end_layout
+
+\begin_layout Standard
+It is also worth checking the generated samples.
+ We provide some samples
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The audio files can be found 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "https://archive.org/details/ma-musicVAE"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ for 
+\begin_inset Formula $k=128$
+\end_inset
+
+ conditions:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../plots/1ba.png
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sample generated by network with 1 hidden layer, 
+\begin_inset Formula $k=128$
+\end_inset
+
+ and 
+\begin_inset Formula $\left\{ x_{\lambda}^{2}\right\} _{\lambda}\Rightarrow\left\{ x_{\lambda}^{1}\right\} _{\lambda}$
+\end_inset
+
+ setting.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../plots/1fo.png
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sample generated by network with 1 hidden layer, 
+\begin_inset Formula $k=128$
+\end_inset
+
+ and 
+\begin_inset Formula $\left\{ x_{\lambda}^{1}\right\} _{\lambda}\Rightarrow\left\{ x_{\lambda}^{2}\right\} _{\lambda}$
+\end_inset
+
+ setting.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../plots/2ba.png
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sample generated by network with 2 hidden layers, 
+\begin_inset Formula $k=128$
+\end_inset
+
+ and 
+\begin_inset Formula $\left\{ x_{\lambda}^{2}\right\} _{\lambda}\Rightarrow\left\{ x_{\lambda}^{1}\right\} _{\lambda}$
+\end_inset
+
+ setting.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../plots/2fo.png
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sample generated by network with 2 hidden layer, 
+\begin_inset Formula $k=128$
+\end_inset
+
+ and 
+\begin_inset Formula $\left\{ x_{\lambda}^{1}\right\} _{\lambda}\Rightarrow\left\{ x_{\lambda}^{2}\right\} _{\lambda}$
+\end_inset
+
+ setting.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -361,9 +1580,31 @@ Discussion
 \end_layout
 
 \begin_layout Standard
+In this report we demonstrate that it is feasible to generate a melody-accompani
+ment pair simultaneously with musicVAE architecture.
+ By transforming the latent vector, we can obtain the melody part from the
+ accompaniment part or vice versa.
+\end_layout
+
+\begin_layout Standard
+However, the samples generated from the network are not quite satisfying
+ and don't sound like Bach's music, even produced under the 2-hidden-layer
+ setting.
+ A reasonable conjecture is that the encoder does not capture the chord
+ progression quite well due to the fact that the original network is trained
+ on pop-music dataset.
+ Another potential problem is that the network fail to learn the fuga structure
+ which is heavily used in Bach's compositions.
+ One possible workout is to add connections between LSTM nodes in the encoders
+ to strength certain recurrent pattern.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-bibfiles "example_paper"
+btprint "btPrintCited"
+bibfiles "ref"
 options "icml2018"
 
 \end_inset

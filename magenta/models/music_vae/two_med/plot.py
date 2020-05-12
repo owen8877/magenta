@@ -28,5 +28,7 @@ for forward in forwards:
       ax.plot(range(EPOCH), data[forward][k][hln]["test_loss"], 'C{:d}'.format(j), label='Test k={:d}'.format(k), ls=':')
     ax.legend()
     ax.set_title('Direction: {:s} -> {:s}\n{:d} hidden layer(s)'.format('up' if forward else 'bottom', 'bottom' if forward else 'up', hln))
+    ax.set_xlabel('epoch')
+  axs[0].set_ylabel('mse loss')
   # fig.show()
-  fig.savefig('plot/{:s}.eps'.format('forward' if forward else 'backward'), dpi=300)
+  fig.savefig('plot/{:s}.eps'.format('forward' if forward else 'backward'), dpi=1000)
