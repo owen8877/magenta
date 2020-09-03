@@ -639,50 +639,88 @@ Introduction and Review on Music Generation Techniques
 
 \begin_layout Standard
 Music generation has been a popular topic and much attention has been drawn
- to this field [Deep Learning Techniques for Music Generation– A Survey][usic
- Generation by Deep Learning– Challenges and Directions∗].
+ to this field 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Briot2017a,Briot2017"
+literal "false"
+
+\end_inset
+
+.
+ One way of music generation is to directly output the audio files and 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Oord2016"
+literal "false"
+
+\end_inset
+
+ addresses a technique to generate wideband raw audio waveforms which are
+ signals with very high temporal resolution.
+ The idea is to use the dilated causal convolutional layers which keeps
+ both short-term and long-term correlation in audio profiles.
+ In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dieleman2018"
+literal "false"
+
+\end_inset
+
+, an autoregressive model and the argmax encoder is built upon Wavenet structure
+ and the authors show that the convergence can be reliably ensured.
 \end_layout
 
 \begin_layout Standard
-interest in this wide topic: in [he challenge of realistic music generation:mode
-lling raw audio at scale], the authors try to model musical signals at an
- audio level rather than in a symbolic representation.
- By building an autoregressive model and the argmax encoder, the convergence
- can be reliably ensured.
-\end_layout
+Another way is to generate the symbolic representation rather than the audio
+ profile, which is more preferable since we don't need to deal with the
+ high temporal resolution.
+ One popular approach is to use convolutional based network structure.
+ In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Yang2017"
+literal "false"
 
-\begin_layout Standard
-In [CONVOLUTIONAL GENERATIVE ADVERSARIAL NETWORKS WITHBINARY NEURONS FOR
- POLYPHONIC MUSIC GENERATION], the authors design a GAN to generate realistic
- music piece in the multi-track piano-roll representation.
- The discriminator consists of three parts: a main stream which compress
+\end_inset
+
+, the authors explore the combination of conditioner and generator CNN with
+ GAN, which leads to music generation without prior information of the melody.
+ In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dong2018"
+literal "false"
+
+\end_inset
+
+, the authors design a GAN to generate realistic music piece in the multi-track
+ piano-roll representation.
+ The discriminator consists of three CNN parts: a main stream which compress
  the single-line sequence, an onset/offset stream and a chroma stream in
  the end.
  
 \end_layout
 
 \begin_layout Standard
-in [Understanding and Improving Interpolation inAutoencoders via an Adversarial
- Regularizer], the authors try to improve current autoencoder design by
- introducing an adversal critic network which distinguish if the synthesized
- data is an interpolation or not.
- 
-\end_layout
+However, due to the nature of music (repetition of melodic materials, careful
+ arrangement of instruments, sophisticated connection between polyphonic
+ progressions), a recurrent based network is much more advisable.
+ In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hadjeres2017"
+literal "false"
 
-\begin_layout Standard
-in [Interactive Music Generation with Positional Constraints usingAnticipation-R
-NNs], enforcing positional constraints becomes feasible in the newly proposed
+\end_inset
+
+, enforcing positional constraints becomes feasible in the newly proposed
  Anticipation-RNN, which makes possible a realistic replication of the style
  of the soprano parts of the `Bach chorale harmonization'.
  The model consists a forward-propagating token chain and a back-propagating
  constraint chain.
-\end_layout
-
-\begin_layout Standard
-The work [LEARNING A LATENT SPACE OF MULTITRACK MEASURES] also uses variational
- autoencoder to represent melodies in the latent space with the feature
- of conditioning.
- extended from 
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Roberts2018"
@@ -690,74 +728,146 @@ literal "false"
 
 \end_inset
 
+ explores another option to address the `vanishing latent variable' issue.
+ The idea is to use a hierarchical RNN design for encoder and decoder which
+ keeps the encoded latent variable changing slowly on a bar-ly basis so
+ that it can be kept for a relatively longer time.
+ Based on that, the work 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Simon2018"
+literal "false"
 
-\end_layout
+\end_inset
 
-\begin_layout Standard
-in [JamBot: Music Theory Aware Chord Based Generation of PolyphonicMusic
- with LSTMs], a hierarchical design is proposed in which the base chord
- LSTM produces a chord line first and the second LSTM generates the polyphonic
- music upin that, making the model music theory aware.
-\end_layout
+ extends the variational autoencoder design which enables the feature of
+ conditioning and allows a richer instrumentation.
+ In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Brunner2018"
+literal "false"
 
-\begin_layout Standard
-in [DeepJ: Style-Specific Music Generation], the work is based on the Biaxial
- LSTM Architecture, which is essentially a sequential probability model.
- DeepJ extends Biaxial LSTM by adding dynamics to the represetation which
- is controlled by a mean squared loss.
-\end_layout
+\end_inset
 
-\begin_layout Standard
-in [Sampling Variations of Lead Sheets] works on preserving certain musical
- structure and melody similarity while at the same time producing realistic
- samples.
- The underlying model is still in a melody-chord two-stage separation fashion.
-\end_layout
+, a hierarchical design is proposed in which the base chord LSTM produces
+ a chord line first and the second LSTM generates the polyphonic music upin
+ that, making the model music theory aware.
+ The work 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Mao2018"
+literal "false"
 
-\begin_layout Standard
-The work [SONGFROMPI: A MUSICALLYPLAUSIBLENETWORKFORPOPMUSICGENERATION]
- focuses on ...
- which uses ser-composed pop songs and videogame music as the training set.
+\end_inset
+
+ is based on the Biaxial LSTM Architecture, which is essentially a sequential
+ probability model.
+ The DeepJ network extends Biaxial LSTM by adding dynamics to the represetation
+ which is controlled by a mean squared loss.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chu2019"
+literal "false"
+
+\end_inset
+
+ focuses on designing a hierarchical RNN network with the key, press, chord
+ and drum layer representation.
+ The training set is built upon user-composed pop songs and videogame music.
  This work also compares different patterns in Major/Minor, Harmonic Minor,
  Melodic Minor, and Blues chords.
 \end_layout
 
 \begin_layout Standard
-In [MIDINET: A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN
- MUSIC GENERATION], the authors explore the combination of conditioner and
- generator CNN with GAN, which leads to music generation without prior informati
-on of the melody.
-\end_layout
+There are also some interests in other aspects in this field.
+ The work 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Roy2017"
+literal "false"
 
-\begin_layout Standard
-[WAVENET: A GENERATIVEMODEL FORRAWAUDIO]
-\end_layout
+\end_inset
 
-\begin_layout Standard
-[Imposing higher-level Structure in Polyphonic Music Generationusing Convolution
-al Restricted Boltzmann Machines and Constraints]
-\end_layout
+ targets on preserving certain musical structure and melody similarity while
+ at the same time producing realistic samples.
+ The underlying model is still a Markov chain in a melody-chord two-stage
+ separation fashion.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jaques2017"
+literal "false"
 
-\begin_layout Standard
-[Sequence Tutor: Conservative Fine-Tuning of Sequence Generation Modelswith
- KL-control] RL approach
-\end_layout
+\end_inset
 
-\begin_layout Standard
-[PerformanceNet: Score-to-Audio Music Generation with Multi-Band Convolutional
- Residual Network ]
-\end_layout
+ takes a RL approach to impose certain structure which ensures the sequence
+ generation RNN is influenced by task-specific rewards as well as information
+ learned from data is retained.
+ In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lattner2018"
+literal "false"
 
-\begin_layout Standard
-[MidiMe: Personalizing a MusicVAEmodel with user data]
-\end_layout
+\end_inset
 
-\begin_layout Standard
-[Generating Music from Text:Mapping Embeddings to a VAE’s Latent Space]
-\end_layout
+, the Convolutional Restricted Boltzmann Machine is used to generate polyphonic
+ music samples.
+ The paper proposes a novel method to work out the challenge of keeping
+ the constraints when performing gradient descent and sampling.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "VanDerWeerdt2018"
+literal "false"
 
-\begin_layout Standard
-[Pop Music Transformer: Generating Music with Rhythm and Harmony]
+\end_inset
+
+ works on the generation of music based on given lyrics.
+ The idea is to use a word2vec network as the encoder and use musicVAE proposed
+ in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Roberts2018"
+literal "false"
+
+\end_inset
+
+ to output music sampls.
+ In 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wang2019"
+literal "false"
+
+\end_inset
+
+, the authors use a combination of contour network and texture network to
+ generate audio performance solely based on the score in the piano roll
+ representation.
+ Tn 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Berthelot2019"
+literal "false"
+
+\end_inset
+
+, the authors improve current autoencoder design by introducing an adversarial
+ critic network which distinguish if the synthesized data is an interpolation
+ or not.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Huang2020"
+literal "false"
+
+\end_inset
+
+ proposes a novel representation of musical sequence which gives better
+ performance in training and testing stages.
 \end_layout
 
 \begin_layout Section
